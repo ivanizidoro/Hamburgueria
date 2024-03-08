@@ -27,7 +27,7 @@ const checkOrderId = (request, response, next) => {
 
 app.post('/order', (request, response) => {
 
-    const { order, clientName, price, status } = request.body
+    const { order, clientName, price } = request.body
 
     const NewClient = { id: uuid.v4(), order, clientName, price, status: "Pedido Aceito" }
 
@@ -47,7 +47,7 @@ app.put('/order/:id', checkOrderId, (request, response) => {
     const index = request.orderIndex
     const id = request.orderId
 
-    const { order, clientName, price, status } = request.body
+    const { order, clientName, price } = request.body
 
     const updatedOrder = { id: uuid.v4(), order, clientName, price, status: "Em Preparação" }
 
