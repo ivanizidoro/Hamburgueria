@@ -29,9 +29,9 @@ const checkOrderId = (request, response, next) => {
 
 app.post('/order', (request, response) => {
 
-    const { order, clientName, price } = request.body
+    const { order, clientName, price, name, pedido } = request.body
 
-    const NewClient = { id: uuid.v4(), order, clientName, price, status: "Pedido Aceito" }
+    const NewClient = { id: uuid.v4(), order, clientName, price, name, pedido, status: "Pedido Aceito" }
 
     orderHamburger.push(NewClient)
 
